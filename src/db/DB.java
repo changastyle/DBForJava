@@ -13,11 +13,13 @@ import java.util.ArrayList;
 public class DB 
 {
        private static Connection conexion;
-       private final static String host ="localhost";
-       private final static String puerto ="3306";
-       private final static String usuario= "root";
-       private final static String password="descargar";
-       private final static String schema = "pruebas";
+       
+       //LECTURA DE PARAMETROS DB EN configDB.xml:
+       private final static String host = XMLAPI.XMLHandler.leer("configDB.xml", "host");
+       private final static String puerto =XMLAPI.XMLHandler.leer("configDB.xml", "port");;
+       private final static String usuario= XMLAPI.XMLHandler.leer("configDB.xml", "user");
+       private final static String password= XMLAPI.XMLHandler.leer("configDB.xml", "password");
+       private final static String schema = XMLAPI.XMLHandler.leer("configDB.xml", "schema");
       
        
        
